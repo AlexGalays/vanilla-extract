@@ -8,6 +8,8 @@ import {
   UnconditionalProperty,
 } from './types';
 
+import { sprinkleClassNames } from "@vanilla-extract/css"
+
 type ResponsiveArrayVariant<
   RA extends { length: number },
   Values extends string | number | symbol,
@@ -269,6 +271,8 @@ export const createSprinkles =
           throw e;
         }
       }
+
+      classNames.forEach(className => sprinkleClassNames.add(className))
 
       return composeStyles(classNames.join(' '));
     };

@@ -109,6 +109,8 @@ interface CSSRule {
   rule: CSSPropertiesWithVars;
 }
 
+export const sprinkleClassNames = new Set<string>()
+
 class Stylesheet {
   rules: Array<CSSRule>;
   conditionalRulesets: Array<ConditionalRuleset>;
@@ -128,6 +130,9 @@ class Stylesheet {
     this.conditionalRulesets = [new ConditionalRuleset()];
     this.fontFaceRules = [];
     this.keyframesRules = [];
+
+    console.log(sprinkleClassNames)
+
     this.localClassNamesMap = new Map(
       localClassNames.map((localClassName) => [localClassName, localClassName]),
     );
