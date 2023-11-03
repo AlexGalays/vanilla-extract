@@ -131,7 +131,7 @@ class Stylesheet {
     this.fontFaceRules = [];
     this.keyframesRules = [];
 
-    console.log(sprinkleClassNames)
+    console.log(sprinkleClassNames.size)
 
     this.localClassNamesMap = new Map(
       localClassNames.map((localClassName) => [localClassName, localClassName]),
